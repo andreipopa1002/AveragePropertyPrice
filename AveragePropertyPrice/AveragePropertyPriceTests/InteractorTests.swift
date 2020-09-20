@@ -28,7 +28,7 @@ final class InteractorTests: XCTestCase {
         XCTAssertEqual(capturedAverage, Decimal.zero)
     }
 
-    func test_GivenServiceSuccess_3Properties_WhenFetchAveragePropertyValue_ThenAverage() {
+    func test_GivenServiceSuccess_3Properties_WhenFetchAveragePropertyValue_ThenResultWithAverage() {
         var capturedAverage: Decimal = Decimal(-100)
 
         interactor.fetchAveragePropertyValue { result in
@@ -47,6 +47,19 @@ final class InteractorTests: XCTestCase {
         XCTAssertEqual(capturedAverage, Decimal(7) / Decimal(3))
     }
 
+    func test_GivenServiceFailure_WhenFetchAveragePropertyValue_ThenResultWithError() {
+        var capturedError: Error?
+
+        interactor.fetchAveragePropertyValue { result in
+            if case .failure(let error) = result {
+                capturedError = error
+            }
+        }
+        mockedService.spyCompletion?(.failure(DummyError()))
+
+        XCTAssertNotNil(capturedError)
+    }
+
 }
 
 private class MockService: PropertyServiceInterface {
@@ -56,3 +69,5 @@ private class MockService: PropertyServiceInterface {
         spyCompletion = completion
     }
 }
+
+struct DummyError: Error {}

@@ -1,17 +1,19 @@
 import UIKit
 
-protocol ViewInterface {
-}
-
 class ViewController: UIViewController {
     var presenter: PresenterInterface?
+    @IBOutlet var responseLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        presenter?.onViewDidLoad()
     }
 }
 
-extension ViewController: ViewInterface { }
+extension ViewController: PresenterOutput {
+    func showAverage(attributedString: NSAttributedString) {
+        responseLabel.attributedText = attributedString
+    }
+}
 
 

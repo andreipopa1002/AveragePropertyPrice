@@ -5,14 +5,17 @@ import NetworkingS
 final class PropetyServiceTests: XCTestCase {
     private var service: PropertyService!
     private var mockedClient: MockClient!
+    private var mockedDecoder: MockDecoder!
 
     override func setUpWithError() throws {
         mockedClient = MockClient()
-        service = PropertyService(client: mockedClient)
+        mockedDecoder = MockDecoder()
+        service = PropertyService(client: mockedClient, decoder: mockedDecoder)
     }
 
     override func tearDownWithError() throws {
         mockedClient = nil
+        mockedDecoder = nil
         service = nil
     }
 
@@ -28,7 +31,7 @@ final class PropetyServiceTests: XCTestCase {
         )
     }
 
-    func test_GivenClientSuccess_nilModel_WhenFetchProperties_ThenSuccessPropertiesEmpty() {
+    func test_GivenClientSuccess_nilData_WhenFetchProperties_ThenSuccessPropertiesEmpty() {
         var capturedProperties: [Property]?
 
         service.fetchProperties { result in
@@ -36,25 +39,50 @@ final class PropetyServiceTests: XCTestCase {
                 capturedProperties = properties
             }
         }
-        mockedClient.spyCompletion?(.success((model: nil, response: nil)))
+        mockedClient.spyCompletion?(.success((data: nil, response: nil)))
 
         XCTAssertEqual(capturedProperties, [])
     }
 
-    func testGivenClientSuccess_withModel_WhenFetchProperties_ThenSuccessSameProperties() {
-        var capturedProperties: [Property]?
+    func test_GivenClientSuccess_withData_WhenFetchProperties_ThenDecoderReceivesData() {
+        service.fetchProperties { result in }
+        let stubbedData = Data()
+        mockedClient.spyCompletion?(.success((data: stubbedData, response: nil)))
+
+        XCTAssertEqual(
+            mockedDecoder.spyData,
+            [stubbedData]
+        )
+    }
+
+    func test_GivenClientSuccess_DecodingFailure_WhenFetchProperties_ThenSuccessEmptyProperties() {
+        var capturedProperties: [Property]? = nil
 
         service.fetchProperties { result in
             if case .success(let properties) = result {
                 capturedProperties = properties
             }
         }
-        mockedClient.spyCompletion?(.success((model: [Property(price: 0), Property(price: 2)], response: nil)))
+        mockedDecoder.shouldThrow = true
+        mockedClient.spyCompletion?(.success((data: Data(), response: nil)))
 
-        XCTAssertEqual(
-            capturedProperties,
-            [Property(price: 0), Property(price: 2)]
-        )
+        XCTAssertEqual(capturedProperties, [])
+    }
+
+    func test_GivenSuccess_DecodingSuccess_WhenFetchProperties_ThenSuccessWithPropertie() {
+        var capturedProperties: [Property]? = nil
+
+        service.fetchProperties { result in
+            if case .success(let properties) = result {
+                capturedProperties = properties
+            }
+        }
+
+        let expectedProperty = Property(price: 123)
+        mockedDecoder.stubbedModel = PropertiesModel(properties: [expectedProperty])
+        mockedClient.spyCompletion?(.success((data: Data(), response: nil)))
+
+        XCTAssertEqual(capturedProperties, [expectedProperty])
     }
 
     func test_GivenClientFailureAnyError_WhenFetchProperties_ThenFailure() {
@@ -71,16 +99,27 @@ final class PropetyServiceTests: XCTestCase {
     }
 }
 
-private class MockClient: DecodingServiceInterface {
+private class MockClient: NetworkServiceInterface {
     private(set) var spyFetchRequest = [URLRequest]()
-    private var completion: Any?
+    private(set) var spyCompletion: NetworkServiceCompletion?
 
-    func fetch<DecodableModel>(request: URLRequest, completion: @escaping DecodingServiceCompletion<DecodableModel>) where DecodableModel : Decodable {
+    func fetch(request: URLRequest, completion: @escaping NetworkServiceCompletion) {
         spyFetchRequest.append(request)
-        self.completion = completion
+        spyCompletion = completion
     }
+}
 
-    var spyCompletion: DecodingServiceCompletion<[Property]>? {
-        return completion as? DecodingServiceCompletion<[Property]>
+private class MockDecoder: DecoderInterface {
+    private(set) var spyData = [Data]()
+    var shouldThrow = false
+    var stubbedModel = PropertiesModel(properties: [Property(price: 1)])
+
+    func decode<T>(_ type: T.Type, from data: Data) throws -> T where T : Decodable {
+        spyData.append(data)
+        guard shouldThrow == false else {
+            throw DummyError()
+        }
+
+        return stubbedModel as! T
     }
 }

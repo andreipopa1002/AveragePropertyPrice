@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		25A4C7A12517897E009A66DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A4C7A02517897E009A66DA /* AppDelegate.swift */; };
-		25A4C7A32517897E009A66DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A4C7A22517897E009A66DA /* SceneDelegate.swift */; };
 		25A4C7A52517897E009A66DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A4C7A42517897E009A66DA /* ViewController.swift */; };
 		25A4C7A82517897E009A66DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25A4C7A62517897E009A66DA /* Main.storyboard */; };
 		25A4C7AA2517897F009A66DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25A4C7A92517897F009A66DA /* Assets.xcassets */; };
@@ -20,6 +19,7 @@
 		25A4C7E72517908D009A66DA /* PropetyServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A4C7E62517908D009A66DA /* PropetyServiceTests.swift */; };
 		25A4C7F02517A479009A66DA /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A4C7EF2517A479009A66DA /* Interactor.swift */; };
 		25A4C7F42517A960009A66DA /* InteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A4C7F32517A960009A66DA /* InteractorTests.swift */; };
+		25A4C7FA2517CDE6009A66DA /* PropertyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A4C7F92517CDE6009A66DA /* PropertyTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +35,6 @@
 /* Begin PBXFileReference section */
 		25A4C79D2517897E009A66DA /* AveragePropertyPrice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AveragePropertyPrice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25A4C7A02517897E009A66DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		25A4C7A22517897E009A66DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		25A4C7A42517897E009A66DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		25A4C7A72517897E009A66DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		25A4C7A92517897F009A66DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		25A4C7E62517908D009A66DA /* PropetyServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropetyServiceTests.swift; sourceTree = "<group>"; };
 		25A4C7EF2517A479009A66DA /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 		25A4C7F32517A960009A66DA /* InteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorTests.swift; sourceTree = "<group>"; };
+		25A4C7F92517CDE6009A66DA /* PropertyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +92,6 @@
 			isa = PBXGroup;
 			children = (
 				25A4C7A02517897E009A66DA /* AppDelegate.swift */,
-				25A4C7A22517897E009A66DA /* SceneDelegate.swift */,
 				25A4C7A42517897E009A66DA /* ViewController.swift */,
 				25A4C7D925178A73009A66DA /* Presenter.swift */,
 				25A4C7A62517897E009A66DA /* Main.storyboard */,
@@ -112,6 +111,7 @@
 				25A4C7B92517897F009A66DA /* Info.plist */,
 				25A4C7E62517908D009A66DA /* PropetyServiceTests.swift */,
 				25A4C7F32517A960009A66DA /* InteractorTests.swift */,
+				25A4C7F92517CDE6009A66DA /* PropertyTests.swift */,
 			);
 			path = AveragePropertyPriceTests;
 			sourceTree = "<group>";
@@ -227,7 +227,6 @@
 				25A4C7DF25178B35009A66DA /* PropertyService.swift in Sources */,
 				25A4C7A12517897E009A66DA /* AppDelegate.swift in Sources */,
 				25A4C7DA25178A73009A66DA /* Presenter.swift in Sources */,
-				25A4C7A32517897E009A66DA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +236,7 @@
 			files = (
 				25A4C7B82517897F009A66DA /* AveragePropertyPriceTests.swift in Sources */,
 				25A4C7E72517908D009A66DA /* PropetyServiceTests.swift in Sources */,
+				25A4C7FA2517CDE6009A66DA /* PropertyTests.swift in Sources */,
 				25A4C7F42517A960009A66DA /* InteractorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
