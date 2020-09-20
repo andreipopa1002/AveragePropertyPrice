@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "NetworkingS",
+        "repositoryURL": "https://github.com/andreipopa1002/NetworkingS",
+        "state": {
+          "branch": "master",
+          "revision": "79a9c2cffcc452f437b5be3cdb05f3f4dd082024",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
