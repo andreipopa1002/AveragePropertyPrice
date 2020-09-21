@@ -20,6 +20,7 @@
 		25A4C7F02517A479009A66DA /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A4C7EF2517A479009A66DA /* Interactor.swift */; };
 		25A4C7F42517A960009A66DA /* InteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A4C7F32517A960009A66DA /* InteractorTests.swift */; };
 		25A4C7FA2517CDE6009A66DA /* PropertyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A4C7F92517CDE6009A66DA /* PropertyTests.swift */; };
+		25A4C8042517F61F009A66DA /* PresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A4C8032517F61F009A66DA /* PresenterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		25A4C7EF2517A479009A66DA /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 		25A4C7F32517A960009A66DA /* InteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorTests.swift; sourceTree = "<group>"; };
 		25A4C7F92517CDE6009A66DA /* PropertyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyTests.swift; sourceTree = "<group>"; };
+		25A4C8032517F61F009A66DA /* PresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				25A4C7E62517908D009A66DA /* PropetyServiceTests.swift */,
 				25A4C7F32517A960009A66DA /* InteractorTests.swift */,
 				25A4C7F92517CDE6009A66DA /* PropertyTests.swift */,
+				25A4C8032517F61F009A66DA /* PresenterTests.swift */,
 			);
 			path = AveragePropertyPriceTests;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25A4C8042517F61F009A66DA /* PresenterTests.swift in Sources */,
 				25A4C7B82517897F009A66DA /* AveragePropertyPriceTests.swift in Sources */,
 				25A4C7E72517908D009A66DA /* PropetyServiceTests.swift in Sources */,
 				25A4C7FA2517CDE6009A66DA /* PropertyTests.swift in Sources */,

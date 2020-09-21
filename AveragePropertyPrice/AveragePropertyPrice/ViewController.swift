@@ -10,7 +10,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: PresenterOutput {
+extension ViewController: PresenterOutputInterface {
     func showAverage(attributedString: NSAttributedString) {
         responseLabel.attributedText = attributedString
     }

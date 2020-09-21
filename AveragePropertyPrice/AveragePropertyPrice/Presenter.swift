@@ -5,13 +5,13 @@ protocol PresenterInterface {
     func onViewDidLoad()
 }
 
-protocol PresenterOutput: AnyObject {
+protocol PresenterOutputInterface: AnyObject {
     func showAverage(attributedString: NSAttributedString)
 }
 
 final class Presenter {
     private let interactor: InteractorInterface
-    weak var view: PresenterOutput?
+    weak var view: PresenterOutputInterface?
 
     init(interactor: InteractorInterface) {
         self.interactor = interactor
@@ -40,7 +40,7 @@ private extension Presenter {
     func style(averageValue: (Decimal)) -> NSAttributedString {
         var attributes = [NSAttributedString.Key: AnyObject]()
         attributes[.font] = UIFont.systemFont(ofSize: 14.0)
-        attributes[.foregroundColor] = #colorLiteral(red: 0.1490196078, green: 0.1490196078, blue: 0.2156862745, alpha: 1)
+        attributes[.foregroundColor] = UIColor(named: "FontColor")
         
         let style = NSMutableParagraphStyle()
         style.alignment = .center
