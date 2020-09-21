@@ -12,7 +12,6 @@
 		25A4C7A82517897E009A66DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25A4C7A62517897E009A66DA /* Main.storyboard */; };
 		25A4C7AA2517897F009A66DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25A4C7A92517897F009A66DA /* Assets.xcassets */; };
 		25A4C7AD2517897F009A66DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25A4C7AB2517897F009A66DA /* LaunchScreen.storyboard */; };
-		25A4C7B82517897F009A66DA /* AveragePropertyPriceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A4C7B72517897F009A66DA /* AveragePropertyPriceTests.swift */; };
 		25A4C7D5251789FC009A66DA /* NetworkingS in Frameworks */ = {isa = PBXBuildFile; productRef = 25A4C7D4251789FC009A66DA /* NetworkingS */; };
 		25A4C7DA25178A73009A66DA /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A4C7D925178A73009A66DA /* Presenter.swift */; };
 		25A4C7DF25178B35009A66DA /* PropertyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A4C7DE25178B35009A66DA /* PropertyService.swift */; };
@@ -42,7 +41,6 @@
 		25A4C7AC2517897F009A66DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		25A4C7AE2517897F009A66DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25A4C7B32517897F009A66DA /* AveragePropertyPriceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AveragePropertyPriceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		25A4C7B72517897F009A66DA /* AveragePropertyPriceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AveragePropertyPriceTests.swift; sourceTree = "<group>"; };
 		25A4C7B92517897F009A66DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25A4C7D925178A73009A66DA /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		25A4C7DE25178B35009A66DA /* PropertyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyService.swift; sourceTree = "<group>"; };
@@ -109,7 +107,6 @@
 		25A4C7B62517897F009A66DA /* AveragePropertyPriceTests */ = {
 			isa = PBXGroup;
 			children = (
-				25A4C7B72517897F009A66DA /* AveragePropertyPriceTests.swift */,
 				25A4C7B92517897F009A66DA /* Info.plist */,
 				25A4C7E62517908D009A66DA /* PropetyServiceTests.swift */,
 				25A4C7F32517A960009A66DA /* InteractorTests.swift */,
@@ -238,7 +235,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				25A4C8042517F61F009A66DA /* PresenterTests.swift in Sources */,
-				25A4C7B82517897F009A66DA /* AveragePropertyPriceTests.swift in Sources */,
 				25A4C7E72517908D009A66DA /* PropetyServiceTests.swift in Sources */,
 				25A4C7FA2517CDE6009A66DA /* PropertyTests.swift in Sources */,
 				25A4C7F42517A960009A66DA /* InteractorTests.swift in Sources */,
